@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SARKARI TYPING MASTER PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="login-page" class="page">
+        <div class="login-card">
+            <h1>SARKARI TYPING</h1>
+            <p>UPSSSC / SSC Special Practice</p>
+            <input type="text" id="user-name" placeholder="अपना नाम लिखें">
+            <button class="main-btn" onclick="handleLogin()">Login</button>
+        </div>
+    </div>
+
+    <div id="selection-page" class="page">
+        <div class="top-nav">
+            <span class="nav-title">SARKARI TYPING MASTER</span>
+            <button class="back-btn" onclick="location.reload()">Logout</button>
+        </div>
+        <h2>प्रैक्टिस के लिए भाषा चुनें</h2>
+        <div class="language-options">
+            <div class="lang-card" onclick="openModule('en')">
+                <div class="icon-text">EN</div>
+                <h3>ENGLISH</h3>
+            </div>
+            <div class="lang-card" onclick="openModule('hi')">
+                <div class="icon-text">हिं</div>
+                <h3>HINDI</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="passage-page" class="page">
+        <div class="top-nav">
+            <button class="back-btn" onclick="showPage('selection-page')">← Back</button>
+            <span id="module-label" class="nav-title">Module</span>
+            <button class="back-btn" onclick="location.reload()">Logout</button>
+        </div>
+        <div class="content-wrapper">
+            <div class="admin-section">
+                <h3>Exam Passages</h3>
+                <div id="passage-list"></div>
+            </div>
+            <div class="user-section">
+                <h3>Custom Text</h3>
+                <textarea id="custom-text" placeholder="Paste your text here..."></textarea>
+                <button class="main-btn" onclick="startCustom()">Start Typing</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="typing-page" class="page">
+        <div class="top-nav">
+            <button class="back-btn" onclick="confirmExit()">← Cancel</button>
+            <div id="timer">Time: 05:00</div>
+            <div class="nav-title">Typing Lab</div>
+        </div>
+        <div class="typing-container">
+            <div id="text-display" class="text-box"></div>
+            <textarea id="typing-area" placeholder="Start typing here..." spellcheck="false"></textarea>
+            <div class="live-stats">
+                <span>WPM: <b id="live-wpm">0</b></span>
+                <span>Mistakes: <b id="live-errors">0</b></span>
+                <span>Backspaces: <b id="live-back">0</b></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
